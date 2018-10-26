@@ -61,7 +61,13 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     },
     {
       loader: require.resolve('css-loader'),
-      options: cssOptions,
+      options: {
+        importLoaders: 1,
+        minimize: true,
+        sourceMap: shouldUseSourceMap,
+        localIndentName: '[name]__[local]___[hash:base64:5]',
+        modules: 1
+      },
     },
     {
       // Options for PostCSS as we reference these options twice
@@ -84,6 +90,12 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
         sourceMap: shouldUseSourceMap,
       },
     },
+    {
+      loader: require.resolve('sass-loader'),
+      options: {
+        includePaths: [paths.globalStyles]
+      },
+    }
   ];
   if (preProcessor) {
     loaders.push({
