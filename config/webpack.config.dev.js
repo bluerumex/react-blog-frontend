@@ -67,7 +67,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
       loader: require.resolve('sass-loader'),
       options: {
         includePaths: [paths.globalStyles]
-      },
+      }
     }
   ];
   if (preProcessor) {
