@@ -12,9 +12,9 @@ const Pagination = () => {
             <Button disabled>
                 Prev
             </Button>
-            <Button className={cx('number')}>
+            <div className={cx('number')}>
                 페이지 1
-            </Button>
+            </div>
             <Button>
                 Next
             </Button>

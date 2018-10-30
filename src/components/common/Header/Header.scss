@@ -1,8 +1,8 @@
-@import '../../../../styles/utils';
+@import '../../../styles/utils';
 // @import 'utils';
 
 .header {
-    background-color: $oc-violet-6;
+    background: $oc-violet-6;
     .header-content {
         height: 5rem;
         width: 1400px;

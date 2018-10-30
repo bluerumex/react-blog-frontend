@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const PreviewPane = () => {
+const PreviewPane = ({markdown, title}) => {
     return (
         <div className={cx('preview-pane')}>
             <h1 className={cx('title')}>
