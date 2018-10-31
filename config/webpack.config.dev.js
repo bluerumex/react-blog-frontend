@@ -37,11 +37,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
     require.resolve('style-loader'),
     {
       loader: require.resolve('css-loader'),
-      options: {
-        importLoaders: 1,
-        localIndentName: '[name]__[local]___[hash:base64:5]',
-        modules: 1
-      },
+      options: cssOptions,
     },
     {
       // Options for PostCSS as we reference these options twice
@@ -63,12 +59,6 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
         ],
       },
     },
-    {
-      loader: require.resolve('sass-loader'),
-      options: {
-        includePaths: [paths.globalStyles]
-      }
-    }
   ];
   if (preProcessor) {
     loaders.push(require.resolve(preProcessor));
@@ -86,7 +76,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   // These are the "entry points" to our application.
   // This means they will be the "root" imports that are included in JS bundle.
-  entry: [
+  entry: {
     // Include an alternative client for WebpackDevServer. A client's job is to
     // connect to WebpackDevServer by a socket and get notified about changes.
     // When you save a file, the client will either apply hot updates (in case
@@ -97,13 +87,20 @@ module.exports = {
     // the line below with these two lines if you prefer the stock client:
     // require.resolve('webpack-dev-server/client') + '?/',
     // require.resolve('webpack/hot/dev-server'),
-    require.resolve('react-dev-utils/webpackHotDevClient'),
+    app: [
+        require.resolve('react-dev-utils/webpackHotDevClient'), paths.appIndexJs
+    ],
+    vendor: [
+      'react',
+      'react-dom',
+      'react-router-dom'
+    ]
     // Finally, this is your app's code:
-    paths.appIndexJs,
+    
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
-  ],
+  },
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
@@ -125,7 +122,7 @@ module.exports = {
     // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
     splitChunks: {
       chunks: 'all',
-      name: false,
+      name: true,
     },
     // Keep the runtime chunk seperated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
