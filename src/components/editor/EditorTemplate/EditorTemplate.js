@@ -11,7 +11,6 @@ class EditorTemplate extends Component {
     };
 
     _handleMouseMove = (e) => {
-        console.log('mouse down...')
         this.setState({
             leftPercentage: e.clientX / window.innerWidth
         });

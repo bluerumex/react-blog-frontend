@@ -1,4 +1,4 @@
-@import '../../../styles/utils.scss';
+@import '../../../styles/utils';
 
 .editor-pane {
     flex: 1;
@@ -20,7 +20,7 @@
 
     .code-editor {
         flex: 1;
-        background: $oc-gray-9;
+        background: $oc-gray-1;
         display: flex;
         flex-direction: column;
         :global .CodeMirror {

@@ -24,7 +24,7 @@ class EditorPane extends Component {
     codeMirror = null // CodeMirror Instance
 
     _initializeEditor = () => {
-        this.codeMirror = CodeMirror(this.editor, {
+        this.codeMirror = CodeMirror.fromTextArea(this.editor, {
             mode: 'markdown',
             theme: 'monokai',
             lineNumbers: true,

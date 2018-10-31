@@ -1,8 +1,8 @@
 import React from 'react';
 import Styles from './PageTemplate.scss';
 import classNames from 'classnames/bind';
-import Header from 'components/common/Header';
-import Footer from 'components/common/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const cx = classNames.bind(Styles);
 

@@ -1,4 +1,4 @@
-@import '../../../styles/utils.scss';
+@import '../../../styles/utils';
 
 .editor-template {
     .panes {
@@ -8,7 +8,6 @@
 
         .pane {
             display: flex;
-            // flex: 1;
             min-width: 0;
             overflow: auto;
    
@@ -20,7 +19,6 @@
             position: absolute;
             transform: translate(-50%);
             cursor: col-resize;
-            // background: black;
         }
 
         @include media("<medium") {
