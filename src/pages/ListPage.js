@@ -6,14 +6,12 @@ import Pagination from 'components/list/Pagination';
 
 const ListPage = () => {
     return (
-        <div>
-            <PageTemplate>
-                <ListWrapper>
-                    <PostList />
-                    <Pagination />
-                </ListWrapper>
-            </PageTemplate>
-        </div>
+	<PageTemplate>
+	    <ListWrapper>
+	        <PostList />
+	        <Pagination />
+	    </ListWrapper>
+	</PageTemplate>
     );
 };
 
