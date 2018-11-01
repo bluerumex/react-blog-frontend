@@ -5,7 +5,7 @@ import { pender } from 'redux-pender';
 import * as api from 'lib/api';
 
 // action types
-const GET_POST = 'editor/GET_POST';
+const GET_POST = 'post/GET_POST';
 
 // action creators
 export const getPost = createAction(GET_POST, api.getPost);

@@ -12,9 +12,10 @@ const PostItem = ({title, body, publishedDate, tags, id}) => {
     const tagList = tags.map(
         tag => <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link>
     );
+
     return (
         <div className={cx('post-item')}>
-            <h2><Link to={`/post/${id}`}>{title}></Link></h2>
+            <h2><Link to={`/post/${id}`}>{title}</Link></h2>
             <div className={cx('date')}>
                 {moment(publishedDate).format('ll')}
             </div>
@@ -29,7 +30,7 @@ const PostItem = ({title, body, publishedDate, tags, id}) => {
 const PostList = ({posts}) => {
     const postList = posts.map(
         (post) => {
-            const { _id, title, body, publishedDate, tags } = post.toJs();
+            const { _id, title, body, publishedDate, tags } = post.toJS();
 
             return (
                 <PostItem

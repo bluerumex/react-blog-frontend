@@ -25,11 +25,11 @@ class Post extends Component {
 
         if (loading) return null;
 
-        const { title, body, publishDate, tags } = post.toJs();
+        const { title, body, publishedDate, tags } = post.toJs();
 
         return (
             <div>
-                <PostInfo title={title} publishDate={publishDate} tags={tags} />
+                <PostInfo title={title} publishedDate={publishedDate} tags={tags} />
                 <PostBody body={body} />
             </div>
         );
