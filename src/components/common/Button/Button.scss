@@ -50,7 +50,7 @@
         @include material-shadow(2,0.5); 
     }
     
-    &:disabled {
+    &.disabled {
         background: $oc-gray-4;
         color: $oc-gray-6;
         cursor: default;

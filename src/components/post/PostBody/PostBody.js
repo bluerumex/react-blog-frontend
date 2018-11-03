@@ -6,7 +6,7 @@ import MarkdownRender from 'components/common/MarkdownRender';
 
 const cx = classNames.bind(styles);
 
-const PostBody = (body) => {
+const PostBody = ({body}) => {
     return (
         <div className={cx('post-body')}>
             <div className={cx('paper')}>

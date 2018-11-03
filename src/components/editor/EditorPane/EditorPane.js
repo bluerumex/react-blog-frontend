@@ -22,7 +22,7 @@ class EditorPane extends Component {
 
     editor = null; // editor ref
     codeMirror = null; // CodeMirror Instance
-    cusor = null;
+    cursor = null;
 
     _initializeEditor = () => {
         this.codeMirror = CodeMirror(this.editor, {
@@ -42,7 +42,7 @@ class EditorPane extends Component {
 
     _handleChangeMarkdown = (doc) => {
         const { onChangeInput } = this.props;
-        this.cusor = doc.getCursor();
+        this.cursor = doc.getCursor();
         onChangeInput({
             name: 'markdown',
             value: doc.getValue()
@@ -54,10 +54,10 @@ class EditorPane extends Component {
     };
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevProps.markDown !== this.props.markDown) {
+        if (prevProps.markdown !== this.props.markdown) {
             const { codeMirror, cursor} = this;
             if (!codeMirror) return;
-            codeMirror.setValue(this.props.markDown);
+            codeMirror.setValue(this.props.markdown);
             if (!cursor) return;
             codeMirror.setCursor(cursor);
         }

@@ -13,3 +13,6 @@ export const getPostList = ({tag, page}) => {
     return axios.get(`/api/posts/?${queryString.stringify({tag, page})}`);
 }
 
+export const editPost = ({id, title, body, tags}) => {
+    return axios.patch(`/api/posts/${id}`, {title, body, tags});
+}

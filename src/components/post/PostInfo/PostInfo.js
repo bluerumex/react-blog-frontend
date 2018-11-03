@@ -15,7 +15,7 @@ const PostInfo = ({publishedDate, title, tags}) => {
                 <div className={cx('tags')}>
                 {
                     tags && tags.map(
-                        tag => <Link key={tag} to={`tag/${tag}`}>#{tag}></Link>
+                        tag => <Link key={tag} to={`tag/${tag}`}>#{tag}</Link>
                     )
                 }
                 </div>

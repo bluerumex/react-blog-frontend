@@ -25,7 +25,7 @@ class Post extends Component {
 
         if (loading) return null;
 
-        const { title, body, publishedDate, tags } = post.toJs();
+        const { title, body, publishedDate, tags } = post.toJS();
 
         return (
             <div>
